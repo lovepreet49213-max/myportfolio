@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-import dotenv from "dotenv";
-dotenv.config();
+
 import { Mail ,Phone,Github,Linkedin} from 'lucide-react'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
    const [showModal, setShowModal] = useState(false);
-   const API = process.env.VITE_API_URL;
+   const API = import.meta.env.VITE_API_URL;
 
   return (
     <div role="region" aria-labelledby="contact-heading">
