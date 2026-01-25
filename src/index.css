@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f172a;
+  --primary: #253ba7;
+  --primary-light: #3b82f6;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border: #1e293b;
+  --primary-dark: #253ba7;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Simple focus styles for accessibility */
+:focus {
+  outline: 3px solid rgba(56, 189, 248, 0.35);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Skip link (visible on keyboard focus) */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background: rgba(15,23,42,0.95);
+  color: var(--primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transform: translateY(-140%);
+  transition: transform 0.18s ease;
+  z-index: 60;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Small utility for card glow */
+.card-glow {
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.06);
+} 
+
+
+
+
+/* Animated Portfolio Background //////////////////////////////////////////////////////////////////////////*/
+.animated-bg {
+  --tw-bg-opacity: 1;
+  background: linear-gradient(
+    120deg,
+    rgb(66 109 242 / var(--tw-bg-opacity)),
+    rgb(15 23 42 / var(--tw-bg-opacity)),
+    rgb(56 84 207 / var(--tw-bg-opacity))
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 12s ease infinite;
+}
+
+/* Smooth flowing animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+
+
+/* Project Card Animation */
+.project-card {
+  transition: all 0.35s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(66, 109, 242, 0.45);
+}
+.project-image {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
+}
+.project-card:active {
+  transform: translateY(-4px) scale(0.98);
+  box-shadow: 0 15px 40px rgba(66, 109, 242, 0.35);
+}
