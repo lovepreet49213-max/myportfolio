@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-
+import dotenv from "dotenv";
+dotenv.config();
 import { Mail ,Phone,Github,Linkedin} from 'lucide-react'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
    const [showModal, setShowModal] = useState(false);
-   const API = import.meta.env.VITE_API_URL;
+   const API = process.env.VITE_API_URL;
 
   return (
     <div role="region" aria-labelledby="contact-heading">
@@ -22,7 +23,7 @@ export default function Contact() {
           const payload = Object.fromEntries(data.entries())
           
         ~  // Example: send to Formspree endpoint or replace with preferred backend
-          fetch('${API}/send-email', {
+          fetch(`${API}/send-email`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
