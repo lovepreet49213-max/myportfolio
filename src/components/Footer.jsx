@@ -3,73 +3,68 @@ import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="mt-5 border-t border-zinc-800">
-      <div className="max-w-6xl mx-auto px-4 py-10">
+    <footer className="mt-24 border-t border-blue-400/20">
+      <div  className="
+  container-wide
+  w-full
+  px-5
+  sm:px-8
+  lg:px-12
+  xl:px-16
+  py-24
+  scroll-mt-16
+  border-t border-blue-400/20
+">
 
-        <div className="flex flex-col md:flex-row md:justify-between items-center gap-8">
+        <div className="flex flex-col md:flex-row md:justify-between items-center gap-10">
 
           {/* LEFT: Logo + Name */}
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <img
-              src="/Ricon-1.png"
-              alt="Rupinder Singh Logo"
-              className="w-14 h-14 object-contain"
-            />
-            <span className="text-white font-poppins font-semibold text-lg">
-              Rupinder Singh
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-400/30 backdrop-blur-md">
+              <img
+                src="/Lsicon-nobg.png"
+                alt="Yash Shetye Logo"
+                className="w-10 h-10 object-contain"
+              />
+            </div>
+            <span className="text-slate-100 font-semibold text-lg tracking-tight">
+              Lovepreet Singh 
+            </span>
+            <span className="text-sm text-blue-200/70 font-mono">
+              Full-Stack Developer
             </span>
           </div>
 
           {/* CENTER: Contact Info */}
-          <div className="flex flex-col items-center md:items-start text-sm text-zinc-400 space-y-3">
-            <div className="flex items-center gap-2">
-              <Mail size={16} />
-              <a
-                href="mailto:rupindersinghkhalsa94@gmail.com"
-                className="hover:text-primary transition"
-              >
-                rupindersinghkhalsa94@gmail.com
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Phone size={16} />
-              <a
-                href="tel:+919876543210"
-                className="hover:text-primary transition"
-              >
-                +91 98765 43210
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Github size={16} />
-              <a
-                href="https://github.com/rupindersingh94"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition"
-              >
-                github.com/rupindersingh94
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Linkedin size={16} />
-              <a
-                href="https://linkedin.com/in/rupinder--singh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-primary transition"
-              >
-                linkedin.com/in/rupinder--singh
-              </a>
-            </div>
+          <div className="flex flex-col items-center md:items-start text-sm text-blue-200/70 space-y-4">
+            <FooterItem
+              icon={<Mail size={16} />}
+              href="mailto:lovepreet49213@gmail.com"
+              label="lovepreet49213@gmail.com"
+            />
+            <FooterItem
+              icon={<Phone size={16} />}
+              href="tel:+919876543210"
+              label="+91 98765 43210"
+            />
+            <FooterItem
+              icon={<Github size={16} />}
+              href="https://github.com/"
+              label="github.com/"
+              external
+            />
+            <FooterItem
+              icon={<Linkedin size={16} />}
+              href="https://linkedin.com/in/"
+              label="linkedin.com/in/"
+              external
+            />
           </div>
 
           {/* RIGHT: Copyright */}
-          <div className="text-zinc-500 text-sm text-center md:text-right">
-            © {new Date().getFullYear()} | All Rights Reserved
+          <div className="text-blue-200/50 text-xs text-center md:text-right">
+            © {new Date().getFullYear()} Lovepreet Singh <br />
+            Crafted with React & Tailwind
           </div>
 
         </div>
@@ -77,3 +72,23 @@ export default function Footer() {
     </footer>
   );
 }
+
+/* Reusable Footer Item */
+const FooterItem = ({ icon, href, label, external }) => (
+  <a
+    href={href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    className="
+      flex items-center gap-3
+      hover:text-blue-400
+      transition-colors
+      group
+    "
+  >
+    <span className="text-blue-400/80 group-hover:text-blue-400">
+      {icon}
+    </span>
+    <span className="break-all">{label}</span>
+  </a>
+);

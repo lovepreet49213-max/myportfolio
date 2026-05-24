@@ -7,6 +7,8 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Education from './components/Education'
+import BlogsSection from './components/BlogsSection'
 
 export default function App() {
   return (
@@ -20,6 +22,9 @@ export default function App() {
         <section id="about" className="py-12">
           <About />
         </section>
+        {/* <section id="blogs" className="py-12">
+          <BlogsSection />
+        </section> */}
 
         <section id="skills" className="py-12">
           <Skills />
@@ -27,6 +32,9 @@ export default function App() {
 
         <section id="projects" className=" py-12">
           <Projects />
+        </section>
+        <section id="education" className="py-12">
+          <Education />
         </section>
 
         <section id="experience" className="py-12">
@@ -36,6 +44,7 @@ export default function App() {
         <section id="contact" className="py-12">
           <Contact />
         </section>
+        
       </main>
 
       <Footer />

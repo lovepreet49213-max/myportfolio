@@ -1,34 +1,65 @@
 export const projects = [
-  {
-    title: "LLM-based Chatbot",
-    level: "Beginner",
+  { title: 'Roylos WebServices',
+    description: 'ROYLOS Company is a full-service digital marketing agency providing SEO, Google Ads, social media marketing, and website/app development to help businesses grow with smart, creative strategies.Empower businesses with innovative digital solutions that drive growth and success.',
+    tech: ["React", "Node.js", "Express", "MongoDB", "JWT", "Vercel"],
+  github: "https://github.com/...",
+  demo: "https://www.roylos.com/",
+  image: "/roylos.png",
+  isFlagship: true
+}
+,
+ {
+    title: "GarageGo – SaaS Garage Management System",
     description:
-      "Developed a conversational chatbot using Large Language Models to answer user queries and perform basic text generation tasks.",
-    tech: ["Python", "Hugging Face", "LangChain", "OpenAI API"],
-    github: "https://github.com/yourusername/llm-chatbot",
-    live: "",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
+      "A production-style MERN application for garage operations management, featuring real-time service booking, role-based access control, and an admin dashboard to manage customers, mechanics, services, and schedules. Built secure REST APIs, implemented authentication and authorization, and enabled real-time updates using Socket.IO.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Socket.IO",
+      "Vercel",
+    ],
+    image: "/garage.png",
+    github: "#",
+    demo: "https://garage-go.vercel.app/",
+    isFlagship: true,
   },
-  {
-    title: "NLP Resume Parser",
-    level: "Beginner",
-    description:
-      "Built an NLP pipeline to extract skills, experience, and education from resumes using text preprocessing and named entity recognition.",
-    tech: ["Python", "spaCy", "NLTK", "Regex"],
-    github: "https://github.com/yourusername/nlp-resume-parser",
-    live: "",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
 
-  },
-  
-  {
-    title: "Data Analysis Dashboard",
-    level: "Intermediate",
-    description:
-      "Performed exploratory data analysis and built interactive dashboards to visualize trends and insights from structured datasets.",
-    tech: ["Python", "Pandas", "SQL", "Tableau"],
-    github: "https://github.com/yourusername/nlp-resume-parser",
-    live: "",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-  },
+  // {
+  //   title: "Resume Tracker & Notification System",
+  //   description:
+  //     "A backend-driven tracking system that monitors resume visits and triggers real-time email notifications. Implemented event-based tracking, API endpoints for visit logging, and automated email alerts to help analyze recruiter engagement.",
+  //   tech: [
+  //     "Node.js",
+  //     "Express",
+  //     "MongoDB",
+  //     "Nodemailer",
+  //     "REST APIs",
+  //     "Vercel",
+  //   ],
+  //   image: "/resumetracker.png",
+  //   github: "#",
+  //   demo: "#",
+  //   isFlagship: false,
+  // },
+
+  // {
+  //   title: "Enterprise REST API Service",
+  //   description:
+  //     "A scalable backend service built with ASP.NET Core following clean architecture principles. Implemented JWT-based authentication, role-based authorization, and structured service layers to support enterprise-ready REST APIs.",
+  //   tech: [
+  //     "ASP.NET Core",
+  //     "C#",
+  //     "Entity Framework Core",
+  //     "SQL Server",
+  //     "JWT",
+  //     "Clean Architecture",
+  //   ],
+  //   image: "/enterprise-api.png",
+  //   github: "#",
+  //   demo: "#",
+  //   isFlagship: false,
+  // },
 ];

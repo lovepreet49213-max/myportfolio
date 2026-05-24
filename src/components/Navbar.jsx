@@ -25,13 +25,13 @@ export default function Navbar() {
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
        <div className="flex items-center gap-3">
   <img
-    src="/Ricon-1.png"
-    alt="Rupinder Singh Logo"
+    src="/Lsicon-nobg.png"
+    alt="Logo"
     className="w-10 h-10 object-contain"
   />
 
   <span className="text-white font-poppins font-semibold text-lg">
-    Rupinder Singh
+    Lovepreet Singh
   </span>
 </div>
         <div className="hidden md:flex items-center space-x-6" aria-hidden={open}>
@@ -40,7 +40,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="/RupinderCv.pdf" download className="ml-4 px-4 py-2 border rounded-md border-primary text-primary bg-[var(--primary)] hover:bg-primary/10">
+          <a href="/lovepreetCV.pdf" download="lovepreetCv.pdf" className="ml-4 px-4 py-2 border rounded-md border-primary text-primary bg-[var(--primary)] hover:bg-primary/10">
             Download CV
           </a>
         </div>
@@ -58,7 +58,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a key={link.id} href={`#${link.id}`} onClick={() => setOpen(false)} className="py-2 hover:text-primary">{link.label}</a>
             ))}
-            <a href="/RupinderCv.pdf" download className="mt-2 px-4 py-2 border rounded-md border-primary text-primary hover:bg-primary/10 inline-block w-max">Download CV</a>
+            <a href="/lovepreetCV.pdf" download="lovepreetCv.pdf" className="mt-2 px-4 py-2 border rounded-md border-primary text-primary hover:bg-primary/10 inline-block w-max">Download CV</a>
           </div>
         </div>
       )}

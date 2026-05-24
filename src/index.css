@@ -3,35 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0f172a;
-  --primary: #253ba7;
-  --primary-light: #3b82f6;
-  --text: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border: #1e293b;
+  /* ===== Base Background ===== */
+  --bg: #011b59;
+
+  /* ===== Brand / Accent ===== */
+  --primary: #4f7cff;
+  --primary-hover: #6b8cff;
+  --primary-light: #a5bfff;
   --primary-dark: #253ba7;
+
+  /* ===== Text Colors ===== */
+  --text: #f8fafc;              /* primary text */
+  --text-secondary: #c7d2fe;    /* secondary text */
+  --text-muted: #94a3b8;        /* muted/meta text */
+
+  /* ===== Borders / Dividers ===== */
+  --border: rgba(148, 163, 184, 0.25);
+
+  background-color: var(--bg);
+  color: var(--text-muted);
+
+  font-family: 'Inter', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-html, body, #root {
+/* Full height */
+html,
+body,
+#root {
   height: 100%;
 }
 
-/* Simple focus styles for accessibility */
+/* ================= ACCESSIBILITY ================= */
+
+/* Focus styles */
 :focus {
-  outline: 3px solid rgba(56, 189, 248, 0.35);
+  outline: 3px solid rgba(79, 124, 255, 0.45);
   outline-offset: 2px;
 }
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Skip link (visible on keyboard focus) */
+/* Skip link */
 .skip-link {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  background: rgba(15,23,42,0.95);
-  color: var(--primary);
+  background: rgba(1, 27, 89, 0.95);
+  color: var(--text);
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   transform: translateY(-140%);
@@ -42,7 +63,7 @@ html, body, #root {
   transform: translateY(0);
 }
 
-/* Respect reduced motion preference */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -51,22 +72,22 @@ html, body, #root {
   }
 }
 
-/* Small utility for card glow */
+/* ================= UI UTILITIES ================= */
+
+/* Card glow */
 .card-glow {
-  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.06);
-} 
+  box-shadow: 0 10px 30px rgba(79, 124, 255, 0.12);
+}
 
+/* ================= ANIMATED BACKGROUND ================= */
 
-
-
-/* Animated Portfolio Background //////////////////////////////////////////////////////////////////////////*/
 .animated-bg {
   --tw-bg-opacity: 1;
   background: linear-gradient(
     120deg,
-    rgb(66 109 242 / var(--tw-bg-opacity)),
-    rgb(15 23 42 / var(--tw-bg-opacity)),
-    rgb(56 84 207 / var(--tw-bg-opacity))
+    rgb(79 124 255 / var(--tw-bg-opacity)),
+    rgb(1 27 89 / var(--tw-bg-opacity)),
+    rgb(37 59 167 / var(--tw-bg-opacity))
   );
   background-size: 300% 300%;
   animation: gradientFlow 12s ease infinite;
@@ -79,13 +100,8 @@ html, body, #root {
   100% { background-position: 0% 50%; }
 }
 
+/* ================= PROJECT CARD ANIMATION ================= */
 
-
-
-
-
-
-/* Project Card Animation */
 .project-card {
   transition: all 0.35s ease;
   transform-style: preserve-3d;
@@ -93,8 +109,9 @@ html, body, #root {
 
 .project-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(66, 109, 242, 0.45);
+  box-shadow: 0 25px 60px rgba(79, 124, 255, 0.45);
 }
+
 .project-image {
   transition: transform 0.4s ease;
 }
@@ -102,7 +119,70 @@ html, body, #root {
 .project-card:hover .project-image {
   transform: scale(1.08);
 }
+
 .project-card:active {
   transform: translateY(-4px) scale(0.98);
-  box-shadow: 0 15px 40px rgba(66, 109, 242, 0.35);
+  box-shadow: 0 15px 40px rgba(79, 124, 255, 0.35);
+}
+.project-card:active .project-image {
+  transform: scale(1.03);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1.03s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 1.03s ease;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);   
+  }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease;
+}
+
+
+
+.container-wide {
+  max-width: 1680px;
+  margin-left: auto;
+  margin-right: auto;
 }
