@@ -1,26 +1,31 @@
 import React from "react";
 
-const technicalTools = [
-  "/svg/git-deployment.svg",
-  "/svg/github.svg",
-  "/svg/vscode.svg",
-  "/svg/postman.svg",
-  "/svg/vercel.svg",
-];
-
 const professionalDetails = [
   {
-    title: "Experience",
-    desc: "2 years as a remote contract developer with a Canada-based startup",
+    title: "Specialization",
+    desc: "Node.js backend development with Express.js, REST APIs, MongoDB, and Mongoose",
   },
   {
     title: "Education",
-    desc: "Master of Computer Application (MCA)",
+    desc: "Master of Computer Applications (MCA) — CGPA 8.77/10",
   },
   {
-    title: "Projects",
-    desc: "Built and deployed multiple full-stack MERN applications",
+    title: "Project Experience",
+    desc: "Built full-stack applications including Real Estate Management Platform, GarageGo, and Roylos Web Services",
   },
+  {
+    title: "Additional Experience",
+    desc: "ASP.NET MVC, Entity Framework, SQL Server, C#, and relational database development",
+  },
+];
+
+const highlights = [
+  "RESTful API Development",
+  "JWT Authentication & RBAC",
+  "MongoDB & Mongoose",
+  "Cloudinary File Uploads",
+  "API Integration & Debugging",
+  "Production Deployment",
 ];
 
 export default function About() {
@@ -40,56 +45,62 @@ export default function About() {
       "
     >
       {/* Section Header */}
-      <div className="flex flex-col gap-2 mb-16">
-        <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-slate-100">
-          Designing Systems <br /> That Scale.
+      <div className="flex flex-col gap-3 mb-12">
+        <span className="text-sm font-bold uppercase tracking-[0.3em] text-blue-300">
+          About Me
+        </span>
+
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-slate-100">
+          Building Backend Systems
+          <br />
+          <span className="text-blue-400">That Solve Real Problems.</span>
         </h2>
       </div>
 
       {/* Main Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-
         {/* Left Column */}
-        <div className="lg:col-span-7 space-y-8">
+        <div className="lg:col-span-7 space-y-7">
           <p className="text-xl md:text-2xl leading-tight text-slate-100 font-semibold">
-            I design and build full-stack applications with a strong focus on
-            backend architecture, scalability, and real-world performance.
+            I'm an MCA graduate and{" "}
+            <span className="text-blue-400">Node.js Backend Engineer</span>{" "}
+            focused on building reliable REST APIs and full-stack web
+            applications.
           </p>
 
           <p className="text-lg text-blue-200/80 leading-relaxed">
-            I have one year of hands-on experience working as a remote contract
-            developer for a Canada-based startup, where I primarily worked on
-            backend systems, APIs, authentication flows, and database design.
+            My recent work includes real estate and garage management platforms
+            involving authentication, role-based authorization, MongoDB data
+            modelling, file uploads, bookings, and third-party integrations.
           </p>
 
           <p className="text-lg text-blue-200/80 leading-relaxed">
-            My current stack centers around the{" "}
-            <span className="text-white font-semibold">MERN ecosystem</span>,
-            where I build secure REST APIs using{" "}
+            I work with{" "}
             <span className="text-white font-semibold">
-              Node.js and Express
+              Node.js, Express.js, MongoDB, and Mongoose
             </span>{" "}
-            and develop modern, responsive frontends with{" "}
-            <span className="text-white font-semibold">React</span>. I also bring
-            strong backend fundamentals from my experience with{" "}
-            <span className="text-white font-semibold">ASP.NET Core</span>.
+            to design REST APIs, middleware, JWT authentication, role-based
+            access control, CRUD operations, and pagination. I have also
+            integrated services such as{" "}
+            <span className="text-white font-semibold">
+              Cloudinary, Nodemailer, and Razorpay
+            </span>
+            .
           </p>
 
           <p className="text-lg text-blue-200/80 leading-relaxed">
-            I enjoy working on problems involving system design, role-based
-            access control, clean architecture, and deployment workflows, and I
-            focus on writing maintainable code that scales with both traffic and
-            team size.
+            Alongside my Node.js experience, I have previous project experience
+            with{" "}
+            <span className="text-white font-semibold">
+              ASP.NET MVC, Entity Framework, and SQL Server
+            </span>
+            , giving me exposure to both NoSQL and relational database
+            applications.
           </p>
 
           {/* Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 pt-4">
-            {[
-              "Scalable MERN Applications",
-              "Secure REST APIs & Authentication",
-              "Role-Based Access Control (RBAC)",
-              "Production-Ready Deployment",
-            ].map((item) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 pt-2">
+            {highlights.map((item) => (
               <div
                 key={item}
                 className="flex items-center gap-3 text-blue-100 font-medium"
@@ -104,39 +115,10 @@ export default function About() {
                   <circle cx="12" cy="12" r="10" />
                   <path d="M9 12l2 2 4-4" />
                 </svg>
+
                 <span className="text-sm md:text-base">{item}</span>
               </div>
             ))}
-          </div>
-
-          {/* Technical Tools */}
-          <div className="flex items-center gap-6 pt-6">
-            <h4 className="flex flex-col text-xs font-black uppercase tracking-[0.3em] text-blue-300">
-              <span>Technical</span>
-              <span>Arsenal</span>
-            </h4>
-
-            <ul className="flex flex-wrap items-center gap-4 sm:gap-6">
-              {technicalTools.map((tool, i) => (
-                <li
-                  key={i}
-                  className="
-                    bg-[383b73]/60 backdrop-blur-md p-4 rounded-2xl
-                    border border-blue-400/20
-                    hover:bg-[#022b7a]/70
-                    hover:-translate-y-2 hover:shadow-xl
-                    hover:shadow-blue-500/30
-                    transition-all duration-300
-                  "
-                >
-                  <img
-                    src={tool}
-                    alt="Tool"
-                    className="h-6 w-6 object-contain"
-                  />
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
@@ -144,27 +126,36 @@ export default function About() {
         <div className="lg:col-span-5">
           <div
             className="
-              bg-white/5 backdrop-blur-xl
+              bg-white/5
+              backdrop-blur-xl
               border border-blue-400/20
-              p-8 rounded-[2.5rem] shadow-xl
+              p-7 sm:p-8
+              rounded-[2.5rem]
+              shadow-xl
             "
           >
-            <h4 className="text-[10px] font-black uppercase tracking-widest text-blue-300 mb-10">
-              Professional Details
+            <h4 className="text-[10px] font-black uppercase tracking-widest text-blue-300 mb-8">
+              Professional Profile
             </h4>
 
-            <div className="space-y-10">
+            <div className="space-y-8">
               {professionalDetails.map((item, i) => (
-                <div key={i} className="flex items-start gap-5 group">
+                <div key={i} className="flex items-start gap-4 group">
                   <div
                     className="
-                      bg-blue-500/20 p-3 rounded-2xl
-                      text-blue-300 border border-blue-400/30
-                      group-hover:scale-110 transition-transform duration-300
+                      bg-blue-500/20
+                      p-3
+                      rounded-2xl
+                      text-blue-300
+                      border border-blue-400/30
+                      group-hover:scale-110
+                      transition-transform
+                      duration-300
+                      shrink-0
                     "
                   >
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -174,35 +165,64 @@ export default function About() {
                       <path d="M9 12l2 2 4-4" />
                     </svg>
                   </div>
+
                   <div>
                     <h5 className="font-bold text-slate-100 mb-1">
                       {item.title}
                     </h5>
-                    <p className="text-sm text-blue-200/80">{item.desc}</p>
+
+                    <p className="text-sm text-blue-200/80 leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Current Focus */}
-            <div className="mt-12 pt-4 border-t border-blue-400/20">
+            <div className="mt-10 pt-6 border-t border-blue-400/20">
               <p className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-4">
                 Current Focus
               </p>
+
               <div className="flex flex-wrap gap-2">
-                {["MERN Stack", "ASP.NET Core", "System Design"].map((item) => (
+                {[
+                  "Node.js",
+                  "Express.js",
+                  "MongoDB",
+                  "REST APIs",
+                  "JWT & RBAC",
+                  "React.js",
+                ].map((item) => (
                   <span
                     key={item}
                     className="
-                      px-4 py-2 bg-blue-500/20 border border-blue-400/30
-                      text-blue-100 rounded-full text-xs font-bold
-                      hover:bg-blue-500/30 transition
+                      px-3 py-2
+                      bg-blue-500/20
+                      border border-blue-400/30
+                      text-blue-100
+                      rounded-full
+                      text-xs
+                      font-bold
+                      hover:bg-blue-500/30
+                      transition
                     "
                   >
                     {item}
                   </span>
                 ))}
               </div>
+            </div>
+
+            {/* Open To */}
+            <div className="mt-8">
+              <p className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-2">
+                Open To
+              </p>
+
+              <p className="text-sm text-slate-200">
+                Node.js Backend Engineer & Full Stack Developer opportunities
+              </p>
             </div>
           </div>
         </div>

@@ -1,5 +1,41 @@
-// sections/Contact.jsx
 import React, { useState } from "react";
+import { siteConfig } from "../siteConfig";
+
+const ContactInfoCard = ({ icon, label, value, href }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 group">
+    <div
+      className="w-12 h-12 rounded-2xl
+                 bg-blue-500/10 backdrop-blur-md
+                 border border-blue-400/20
+                 flex items-center justify-center
+                 group-hover:border-blue-400 transition-colors"
+    >
+      {icon}
+    </div>
+    <div>
+      <p className="text-[10px] font-black uppercase tracking-widest text-blue-300/70">
+        {label}
+      </p>
+      <p className="text-lg font-bold text-slate-100">{value}</p>
+    </div>
+  </a>
+);
+
+const SocialButton = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-4 rounded-2xl
+               bg-blue-500/10 backdrop-blur-md
+               border border-blue-400/20
+               hover:border-blue-400
+               hover:bg-blue-500/20
+               transition-all group"
+  >
+    {children}
+  </a>
+);
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -9,49 +45,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder until backend is connected
+    // Connect to a backend API endpoint here when deployed.
+    // For now the form clears and directs users to email directly.
     setForm({ name: "", email: "", message: "" });
   };
 
-  const ContactInfoCard = ({ icon, label, value }) => (
-    <div className="flex items-center gap-5 group">
-      <div
-        className="w-12 h-12 rounded-2xl
-                   bg-blue-500/10 backdrop-blur-md
-                   border border-blue-400/20
-                   flex items-center justify-center
-                   group-hover:border-blue-400 transition-colors"
-      >
-        {icon}
-      </div>
-      <div>
-        <p className="text-[10px] font-black uppercase tracking-widest text-blue-300/70">
-          {label}
-        </p>
-        <p className="text-lg font-bold text-slate-100">{value}</p>
-      </div>
-    </div>
-  );
-
-  const SocialButton = ({ href, children }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="p-4 rounded-2xl
-                 bg-blue-500/10 backdrop-blur-md
-                 border border-blue-400/20
-                 hover:border-blue-400
-                 hover:bg-blue-500/20
-                 transition-all group"
-    >
-      {children}
-    </a>
-  );
-
   return (
     <section
-      id="connect"
+      id="contact"
       className="
         container-wide
         w-full
@@ -65,24 +66,31 @@ const Contact = () => {
       "
     >
       {/* Header */}
-      <div className="flex flex-col gap-2 mb-16">
+      <div className="flex flex-col gap-3 mb-16">
+        <span className="text-sm font-bold uppercase tracking-[0.3em] text-blue-300">
+          Contact
+        </span>
+
         <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-slate-100">
-          Let’s Build <br /> Something Great.
+          Let's <br /> Connect.
         </h2>
+
+        <p className="text-xl text-blue-200/80 max-w-2xl leading-relaxed">
+          I'm currently open to opportunities in{" "}
+          <span className="text-slate-100 font-bold">
+            Node.js backend
+          </span>{" "}
+          and{" "}
+          <span className="text-slate-100 font-bold">full-stack development</span>.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
         {/* Left Column */}
         <div className="lg:col-span-5 space-y-12">
-          <p className="text-xl text-blue-200/80 leading-relaxed">
-            Whether you want to discuss{" "}
-            <span className="text-slate-100 font-bold">MERN stack</span>,{" "}
-            <span className="text-slate-100 font-bold">.NET</span>, or collaborate
-            on a real-world project, feel free to reach out.
-          </p>
-
           <div className="space-y-8">
             <ContactInfoCard
+              href={`mailto:${siteConfig.email}`}
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -99,10 +107,53 @@ const Contact = () => {
                 </svg>
               }
               label="Email"
-              value="lovepreet49213@gmail.com"
+              value={siteConfig.email}
             />
 
             <ContactInfoCard
+              href={siteConfig.linkedin}
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 text-blue-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect width="4" height="12" x="2" y="9" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              }
+              label="LinkedIn"
+              value="Lovepreet Singh"
+            />
+
+            <ContactInfoCard
+              href={siteConfig.github}
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 text-blue-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.5 4.5 0 0 0-1-3.5c.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5" />
+                </svg>
+              }
+              label="GitHub"
+              value="@lovepreet49213-max"
+            />
+
+            <ContactInfoCard
+              href="#"
               icon={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,44 +170,8 @@ const Contact = () => {
                 </svg>
               }
               label="Location"
-              value="Moga, Punjab, India"
+              value={siteConfig.location}
             />
-          </div>
-
-          <div className="flex gap-4 pt-4">
-            <SocialButton href="https://github.com/yourusername">
-              {/* GitHub Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-slate-100 group-hover:text-blue-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.5 4.5 0 0 0-1-3.5c.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5" />
-              </svg>
-            </SocialButton>
-
-            <SocialButton href="https://www.linkedin.com/in/yourprofile">
-              {/* LinkedIn Icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-slate-100 group-hover:text-blue-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                <rect width="4" height="12" x="2" y="9" />
-                <circle cx="4" cy="4" r="2" />
-              </svg>
-            </SocialButton>
           </div>
         </div>
 
@@ -224,6 +239,16 @@ const Contact = () => {
               >
                 Send Message
               </button>
+
+              <p className="text-xs text-blue-200/60 text-center">
+                Prefer email? Reach me directly at{" "}
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-blue-400 hover:text-blue-300 font-semibold"
+                >
+                  {siteConfig.email}
+                </a>
+              </p>
             </form>
           </div>
         </div>

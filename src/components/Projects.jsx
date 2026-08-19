@@ -1,6 +1,6 @@
-// components/ProjectsSection.jsx
-import { projects } from "./ProjectData";
-import { Github, ExternalLink } from "lucide-react";
+import { featuredProjects } from "./ProjectData";
+import { Github, ExternalLink, ArrowRight, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProjectsSection() {
   return (
@@ -31,7 +31,7 @@ export default function ProjectsSection() {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+        {featuredProjects.map((project, index) => (
           <div
             key={index}
             className="
@@ -58,8 +58,7 @@ export default function ProjectsSection() {
                 "
               />
 
-              {/* Flagship Badge */}
-              {project.isFlagship && (
+              {project.flagship && (
                 <span
                   className="
                     absolute top-4 left-4
@@ -81,11 +80,11 @@ export default function ProjectsSection() {
               </h3>
 
               <p className="text-blue-200/80 text-sm leading-relaxed">
-                {project.description}
+                {project.tagline}
               </p>
 
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 {project.tech.map((tech) => (
                   <span
                     key={tech}
@@ -100,8 +99,21 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
+              {/* Key Features */}
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 pt-1">
+                {project.features.slice(0, 4).map((feature) => (
+                  <span
+                    key={feature}
+                    className="flex items-center gap-1.5 text-xs text-blue-200/70"
+                  >
+                    <Check size={13} className="text-blue-400 shrink-0" />
+                    {feature}
+                  </span>
+                ))}
+              </div>
+
               {/* Actions */}
-              <div className="flex gap-6 pt-4 mt-auto">
+              <div className="flex flex-wrap gap-5 pt-4 mt-auto items-center">
                 <a
                   href={project.github}
                   target="_blank"
@@ -127,6 +139,17 @@ export default function ProjectsSection() {
                   <ExternalLink size={16} />
                   Live Demo
                 </a>
+
+                <Link
+                  to={`/project/${project.slug}`}
+                  className="
+                    flex items-center gap-2 text-sm font-bold
+                    text-slate-100 hover:text-blue-300 transition-colors
+                  "
+                >
+                  View Details
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
 

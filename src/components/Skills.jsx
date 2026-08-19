@@ -3,71 +3,90 @@ import SkillCard from "../components/SkillCard";
 
 const skillData = [
   {
-    title: "Backend Development",
+    title: "Backend",
     count: "01",
     skills: [
-      { name: "Node.js", level: "Intermediate", icon: "/svg/nodejs.svg" },
-      { name: "Express.js", level: "Intermediate", icon: "/svg/express.svg" },
-      { name: "ASP.NET Core", level: "Intermediate", icon: "/svg/aspnet-svgrepo-com.svg" },
-      { name: "REST APIs", level: "Intermediate", icon: "/svg/api.svg" },
-      { name: "Authentication & Authorization (JWT)", level: "Intermediate", icon: "/svg/jwt.svg" },
-      { name: "Real-Time Systems (Socket.IO)", level: "Intermediate", icon: "/svg/websocket-svgrepo-com.svg" },
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Middleware",
+      "API Architecture",
+      "CRUD",
+      "Pagination",
     ],
   },
-
   {
-    title: "Frontend Development",
+    title: "Authentication & Security",
     count: "02",
     skills: [
-      { name: "JavaScript (ES6+)", level: "Intermediate", icon: "/svg/js.svg" },
-      { name: "React.js", level: "Intermediate", icon: "/svg/react.svg" },
-      { name: "Next.js", level: "Intermediate", icon: "/svg/nextjs.svg" },
-      { name: "Tailwind CSS", level: "Intermediate", icon: "/svg/tailwind.svg" },
-      { name: "HTML5", level: "Advanced", icon: "/svg/html.svg" },
-      { name: "CSS3", level: "Intermediate", icon: "/svg/css.svg" },
+      "JWT",
+      "Role-Based Access Control",
+      "bcrypt",
+      "OTP Verification",
+      "Password Hashing",
+      "Token Invalidation",
+      "CORS",
+      "Environment Variables",
     ],
   },
-
   {
-    title: "Databases",
+    title: "Database",
     count: "03",
     skills: [
-      { name: "MongoDB", level: "Intermediate", icon: "/svg/mongodb.svg" },
-      { name: "MySQL", level: "Intermediate", icon: "/svg/mysql.svg" },
-      { name: "SQL Server", level: "Intermediate", icon: "/svg/microsoft-sql-server-logo-svgrepo-com.svg" },
+      "MongoDB",
+      "Mongoose",
+      "SQL Server",
+      "Entity Framework",
+      "Schema Design",
+      "Database Relationships",
     ],
   },
-
   {
-    title: "Integrations & Services",
+    title: "Frontend",
     count: "04",
     skills: [
-      { name: "Razorpay Payment Integration", level: "Intermediate", icon: "/svg/razorpay.svg" },
-      { name: "Cloudinary Media Management", level: "Intermediate", icon: "/svg/cloudinary.svg" },
-      { name: "Twilio (SMS / Notifications)", level: "Intermediate", icon: "/svg/twilio-icon-svgrepo-com.svg" },
+      "React.js",
+      "Vite",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Axios",
+      "Responsive Design",
     ],
   },
-
   {
-    title: "DevOps & Tooling",
+    title: "Integrations",
     count: "05",
-    skills: [
-      { name: "Docker (Basics)", level: "Intermediate", icon: "/svg/docker.svg" },
-      { name: "Git & GitHub", level: "Intermediate", icon: "/svg/git.svg" },
-      {
-        name: "Deployment (Vercel / Render / Railway)",
-        level: "Intermediate",
-        icon: "/svg/deployments.svg",
-      },
-      { name: "CI/CD Fundamentals", level: "Intermediate", icon: "/svg/ci-cd-svgrepo-com.svg" },
-    ],
+    skills: ["Cloudinary", "Multer", "Nodemailer", "Razorpay"],
   },
-
   {
-    title: "Currently Learning",
+    title: "DevOps & Tools",
     count: "06",
     skills: [
-      { name: "System Design Fundamentals", level: "Beginner", icon: "/svg/system.svg" },
+      "Git",
+      "GitHub",
+      "Docker",
+      "Nginx",
+      "Vercel",
+      "Postman",
+      "VS Code",
+      "Visual Studio",
+    ],
+  },
+  {
+    title: "Additional",
+    count: "07",
+    skills: [
+      "C#",
+      "C++",
+      "Java",
+      "Python",
+      "OOP",
+      "DSA",
+      "LINQ",
+      "MVC",
+      "Debugging",
     ],
   },
 ];
@@ -89,17 +108,28 @@ const Skills = () => {
       "
     >
       {/* Header */}
-      <div className="flex flex-col gap-4 mb-16 max-w-3xl">
+      <div className="flex flex-col gap-4 mb-16 max-w-4xl">
+        <span className="text-sm font-bold uppercase tracking-[0.3em] text-blue-300">
+          Technical Skills
+        </span>
+
         <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-slate-100">
-          Technical Skillset
+          Tools I Use to
+          <br />
+          <span className="text-blue-400">Build Applications.</span>
         </h2>
 
         <p className="text-lg text-blue-200/80 leading-relaxed">
-          A backend-focused skill set built around the{" "}
-          <span className="text-white font-semibold">MERN stack</span>, modern{" "}
-          <span className="text-white font-semibold">React & Next.js</span>{" "}
-          frontends, and scalable backend systems using{" "}
-          <span className="text-white font-semibold">Node.js and ASP.NET Core</span>.
+          My primary focus is backend development with{" "}
+          <span className="text-white font-semibold">
+            Node.js, Express.js, MongoDB, and REST APIs
+          </span>
+          , supported by React.js for frontend development and additional
+          experience with{" "}
+          <span className="text-white font-semibold">
+            ASP.NET MVC and SQL Server
+          </span>
+          .
         </p>
       </div>
 
